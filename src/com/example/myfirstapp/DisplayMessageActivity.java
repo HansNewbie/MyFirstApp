@@ -41,7 +41,7 @@ public class DisplayMessageActivity extends Activity {
 				message = "Hey, "+ message + ". Looking good there!";
 				break;
 			case 1:
-				message = "Hang in there, "+ message;
+				message = "Hang in there, "+ message+"!";
 				break;
 			case 2:
 				message = "Keep going, "+ message + ". Just a bit more!";

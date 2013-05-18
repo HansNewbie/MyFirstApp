@@ -28,6 +28,9 @@ public class DisplayMessageActivity extends Activity {
 		if (message == ""){
 			message = "you";
 		}
+		else {
+			message = (Character.toUpperCase(message.charAt(0))) + message.substring(1);
+		}
 		
 		Random randomGenerator = new Random();
 		

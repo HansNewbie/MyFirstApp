@@ -1,5 +1,7 @@
 package com.example.myfirstapp;
 
+import java.util.Random;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.MenuItem;
@@ -26,8 +28,28 @@ public class DisplayMessageActivity extends Activity {
 		if (message == ""){
 			message = "you";
 		}
+		
+		Random randomGenerator = new Random();
+		
+		int msgIndex = randomGenerator.nextInt(4);
 			
-		message = "Hey, "+ message + ". Looking good there!";
+		switch (msgIndex){
+			case 0:
+				message = "Hey, "+ message + ". Looking good there!";
+				break;
+			case 1:
+				message = "Hang in there, "+ message;
+				break;
+			case 2:
+				message = "Keep going, "+ message + ". Just a bit more!";
+				break;
+			case 3:
+				message = message + ", jiayou!";
+				break;
+			default:
+				message = "Hey, "+ message + ". Looking good there!";
+				break;
+		}
 		
 		// Create the text view
 		TextView textView = new TextView(this);

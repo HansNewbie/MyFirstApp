@@ -22,6 +22,11 @@ public class DisplayMessageActivity extends Activity {
 		// Get the message from the intent
 		Intent intent = getIntent();
 		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+		
+		if (message == ""){
+			message = "you";
+		}
+			
 		message = "Hey, "+ message + ". Looking good there!";
 		
 		// Create the text view

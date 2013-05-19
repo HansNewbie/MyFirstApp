@@ -12,6 +12,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 
+@SuppressLint("NewApi")
 public class DisplayMessageActivity extends Activity {
 	
 	@Override
@@ -23,34 +24,36 @@ public class DisplayMessageActivity extends Activity {
 		
 		// Get the message from the intent
 		Intent intent = getIntent();
-		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+		String name = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		
-		if (message == ""){
-			message = "you";
+		if (name.isEmpty()){
+			name = "you";
 		}
 		else {
-			message = (Character.toUpperCase(message.charAt(0))) + message.substring(1);
+			name = (Character.toUpperCase(name.charAt(0))) + name.substring(1);
 		}
 		
 		Random randomGenerator = new Random();
 		
 		int msgIndex = randomGenerator.nextInt(4);
+		
+		String message;
 			
 		switch (msgIndex){
 			case 0:
-				message = "Hey, "+ message + ". Looking good there!";
+				message = "Hey, "+ name + ". Looking good there!";
 				break;
 			case 1:
-				message = "Hang in there, "+ message+"!";
+				message = "Hang in there, "+ name + "!";
 				break;
 			case 2:
-				message = "Keep going, "+ message + ". Just a bit more!";
+				message = "Keep going, "+ name + ". Just a bit more!";
 				break;
 			case 3:
-				message = message + ", jiayou!";
+				message = name + ", jiayou!";
 				break;
 			default:
-				message = "Hey, "+ message + ". Looking good there!";
+				message = "Hey, "+ name + ". Looking good there!";
 				break;
 		}
 		
